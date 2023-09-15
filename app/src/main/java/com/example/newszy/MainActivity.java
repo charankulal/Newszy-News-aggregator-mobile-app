@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.newszy.Models.NewsApiResponse;
@@ -51,6 +52,6 @@ public class MainActivity extends AppCompatActivity implements SelectListener{
 
     @Override
     public void onNewsClicked(NewsHeadlines headlines) {
-
+        startActivity(new Intent(MainActivity.this,DetailedNewsActivity.class).putExtra("data",headlines));
     }
 }
