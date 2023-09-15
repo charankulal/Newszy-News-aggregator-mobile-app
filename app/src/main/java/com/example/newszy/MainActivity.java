@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import com.example.newszy.Models.NewsApiResponse;
@@ -14,11 +15,15 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     CustomAdapter adapter;
+    ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        dialog=new ProgressDialog(this);
+        dialog.setTitle("Fetching News Articles..");
+        dialog.show();
         RequestManager manager=new RequestManager(this);
         manager.getNewsHeadlines(listener,"general",null);
     }
@@ -26,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onFetchData(List<NewsHeadlines> list, String message) {
             showNews(list);
+            dialog.dismiss();
         }
 
         @Override
