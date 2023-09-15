@@ -12,7 +12,7 @@ import com.example.newszy.Models.NewsHeadlines;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SelectListener{
     RecyclerView recyclerView;
     CustomAdapter adapter;
     ProgressDialog dialog;
@@ -44,8 +44,13 @@ public class MainActivity extends AppCompatActivity {
         recyclerView=findViewById(R.id.recycler_main);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this,1));
-        adapter = new CustomAdapter(this,list);
+        adapter = new CustomAdapter(this,list,this);
         recyclerView.setAdapter(adapter);
+
+    }
+
+    @Override
+    public void onNewsClicked(NewsHeadlines headlines) {
 
     }
 }
