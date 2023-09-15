@@ -1,6 +1,7 @@
 package com.example.newszy;
 
 import android.content.Context;
+import android.widget.Toast;
 
 import com.example.newszy.Models.NewsApiResponse;
 
@@ -29,11 +30,17 @@ public class RequestManager {
             call.enqueue(new Callback<NewsApiResponse>() {
                 @Override
                 public void onResponse(Call<NewsApiResponse> call, Response<NewsApiResponse> response) {
+                    if (!response.isSuccessful())
+                    {
+                        Toast.makeText(context, "Error Fetching News", Toast.LENGTH_SHORT).show();
+                    }
+                    listener.onFetchData(response.body().getArticles(),response.message());
 
                 }
 
                 @Override
                 public void onFailure(Call<NewsApiResponse> call, Throwable t) {
+                    listener.onError("Request Failed");
 
                 }
             });
