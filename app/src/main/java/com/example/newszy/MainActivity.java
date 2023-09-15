@@ -31,12 +31,20 @@ public class MainActivity extends AppCompatActivity implements SelectListener, V
         dialog.show();
 
         b1=findViewById(R.id.btn_1);
+        b1.setOnClickListener(this);
         b2=findViewById(R.id.btn_2);
+        b2.setOnClickListener(this);
         b3=findViewById(R.id.btn_3);
+        b3.setOnClickListener(this);
         b4=findViewById(R.id.btn_4);
+        b4.setOnClickListener(this);
         b5=findViewById(R.id.btn_5);
+        b5.setOnClickListener(this);
         b6=findViewById(R.id.btn_6);
+        b6.setOnClickListener(this);
         b7=findViewById(R.id.btn_7);
+        b7.setOnClickListener(this);
+
 
 
 
