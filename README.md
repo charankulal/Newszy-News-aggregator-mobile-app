@@ -1,6 +1,6 @@
 # Newszy: Your Personalized News Aggregator
 
-![Newszy Logo](https://github.com/charankulal/Newszy-News-aggregator-mobile-app/blob/master/Assets/newzy.png)
+![Alt text](./Assets/newzy.png)
 
 Newszy is your go-to mobile news aggregator app, bringing you the latest updates from trusted sources worldwide. Stay informed effortlessly with our curated articles, breaking stories, and customized content tailored to your interests.
 
@@ -20,8 +20,7 @@ Newszy is your go-to mobile news aggregator app, bringing you the latest updates
 
 ## Screenshot
 
-![Screenshot 1](https://github.com/charankulal/Newszy-News-aggregator-mobile-app/blob/master/Assets/Screenshot_20230917_101814_Newszy.jpg)
-
+![Alt text](Assets/Screenshot_20230917_101814_Newszy.jpg)
 
 ## Contributing
 
