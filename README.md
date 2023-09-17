@@ -20,7 +20,7 @@ Newszy is your go-to mobile news aggregator app, bringing you the latest updates
 
 ## Screenshot
 
-![Alt text](Assets/Screenshot_20230917_101814_Newszy.jpg)
+![Alt text](./Assets/Screenshot_20230917_101814_Newszy.jpg)
 
 ## Contributing
 
