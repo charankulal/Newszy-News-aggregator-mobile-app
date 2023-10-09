@@ -1,5 +1,6 @@
 package com.example.newszy;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +14,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class CustomAdapter extends RecyclerView.Adapter <CustomViewHolder>{
+public class CustomAdapter extends RecyclerView.Adapter <CustomViewHolder> {
     private Context context;
-    private List<NewsHeadlines> headlines;
+    private  List<NewsHeadlines> headlines;
     private SelectListener listener;
 
 
@@ -31,21 +32,18 @@ public class CustomAdapter extends RecyclerView.Adapter <CustomViewHolder>{
         return new CustomViewHolder(LayoutInflater.from(context).inflate(R.layout.headline_list_items,parent,false));
     }
 
+
+
     @Override
-    public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CustomViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.textTitle.setText(headlines.get(position).getTitle());
         holder.textSource.setText(headlines.get(position).getSource().getName());
-        if (headlines.get(position).getUrlToImage()!=null)
+        if (headlines.isEmpty() &&  !headlines.get(holder.getAdapterPosition()).getUrlToImage().isEmpty())
         {
             Picasso.get().load(headlines.get(position).getUrlToImage()).into(holder.imageHeadline);
         }
 
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onNewsClicked(headlines.get(position));
-            }
-        });
+        holder.cardView.setOnClickListener(v -> listener.onNewsClicked(headlines.get(position)));
 
 
     }
